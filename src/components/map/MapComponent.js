@@ -11,14 +11,21 @@ import DefaultPositionUpdater from './positionUpdaters/DefaultPositionUpdater';
 
 function MapComponent(props) {
 	const positionCalc = new PositionCalculator();
-	const x = positionCalc.maturityToX(
+
+	let x = positionCalc.maturityToX(
 		props.element.maturity,
 		props.mapDimensions.width
 	);
-	const y = positionCalc.visibilityToY(
+	let y = positionCalc.visibilityToY(
 		props.element.visibility,
 		props.mapDimensions.height
 	);
+
+	console.log('MapComponennt', props);
+	if (props.keyword == 'capability') {
+		x = x - props.mapStyleDefs.capability.width / 2;
+		y = y - props.mapStyleDefs.capability.height / 2;
+	}
 
 	const onElementClick = () => props.setHighlightLine(props.element.line);
 	const canApplyInertia = () =>

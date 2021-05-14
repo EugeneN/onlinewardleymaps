@@ -2,17 +2,18 @@ import React, { memo } from 'react';
 import PropTypes from 'prop-types';
 
 const CapabilitySymbol = props => {
-	const { id, rx, ry, evolved, onClick, styles = {} } = props;
+	const { id, x, y, evolved, onClick, styles = {} } = props;
 	const fill = evolved ? styles.evolvedFill : styles.fill;
 	const stroke = evolved ? styles.evolved : styles.stroke;
+
+	console.log('CapabilitySymbol', props, x, y, styles);
 
 	return (
 		<rect
 			id={id}
-			rx={rx}
-			ry={ry}
+			x={x}
+			y={y}
 			strokeWidth={styles.strokeWidth}
-			r={styles.radius}
 			width={styles.width}
 			height={styles.height}
 			stroke={stroke}
@@ -25,8 +26,8 @@ const CapabilitySymbol = props => {
 CapabilitySymbol.propTypes = {
 	onClick: PropTypes.func,
 	id: PropTypes.string,
-	rx: PropTypes.string,
-	ry: PropTypes.string,
+	x: PropTypes.string,
+	y: PropTypes.string,
 	width: PropTypes.string,
 	height: PropTypes.string,
 	styles: PropTypes.object.isRequired,
