@@ -19,7 +19,7 @@ import MigrationsModal from './MigrationModal';
 import { Collapse } from 'react-bootstrap';
 
 // only use toolbar if set
-const useToolbar = false;
+const useToolbar = true;
 // const isDev = process.env.NODE_ENV === 'development';
 
 function App() {
@@ -28,6 +28,7 @@ function App() {
 	const [mapText, setMapText] = useState('');
 	const [mapTitle, setMapTitle] = useState('Untitled Map');
 	const [mapComponents, setMapComponents] = useState([]);
+	const [mapCapabilities, setMapCapabilities] = useState([]);
 	const [mapSubMaps, setMapSubMaps] = useState([]);
 	const [mapMarkets, setMarkets] = useState([]);
 	const [mapEcosystems, setEcosystems] = useState([]);
@@ -182,6 +183,7 @@ function App() {
 			setMapAnchors(r.anchors);
 			setMapNotes(r.notes);
 			setMapComponents(r.elements);
+			setMapCapabilities(r.capabilities);
 			setMapSubMaps(r.submaps);
 			setMarkets(r.markets);
 			setEcosystems(r.ecosystems);
@@ -203,6 +205,7 @@ function App() {
 		} catch (err) {
 			setInvalid(true);
 			console.log(`Invalid markup on line ${1 + err.line}, could not render.`);
+			console.log(err);
 		}
 	}, [mapText]);
 
@@ -308,6 +311,7 @@ function App() {
 						mapDimensions={mapDimensions}
 						mapMarkets={mapMarkets}
 						mapSubMaps={mapSubMaps}
+						mapCapabilities={mapCapabilities}
 					/>
 					<div className="form-group">
 						<Meta metaText={metaText} />
@@ -318,6 +322,7 @@ function App() {
 					<MapView
 						mapTitle={mapTitle}
 						mapComponents={mapComponents}
+						mapCapabilities={mapCapabilities}
 						mapMarkets={mapMarkets}
 						mapEcosystems={mapEcosystems}
 						mapSubMaps={mapSubMaps}

@@ -17,6 +17,7 @@ import MapGraphics from './foundation/MapGraphics';
 import MapBackground from './foundation/MapBackground';
 import SubMapSymbol from '../symbols/SubMapSymbol';
 import ComponentSymbol from '../symbols/ComponentSymbol';
+import CapabilitySymbol from '../symbols/CapabilitySymbol';
 import MarketSymbol from '../symbols/MarketSymbol';
 import EcosystemSymbol from '../symbols/EcosystemSymbol';
 
@@ -27,6 +28,7 @@ function MapCanvas(props) {
 			{ collection: props.mapSubMaps, type: 'submap' },
 			{ collection: props.mapMarkets, type: 'market' },
 			{ collection: props.mapEcosystems, type: 'ecosystem' },
+			{ collection: props.mapCapabilities, type: 'capability' },
 		],
 		props.mapEvolved,
 		props.mapPipelines
@@ -254,6 +256,15 @@ function MapCanvas(props) {
 										evolved={el.evolved}
 										onClick={() => props.setHighlightLine(el.line)}
 										launchUrl={() => props.launchUrl(el.url)}
+									/>
+								)}
+
+								{el.type === 'capability' && (
+									<CapabilitySymbol
+										id={'capability_rect_' + el.id}
+										styles={props.mapStyleDefs.capability}
+										evolved={el.evolved}
+										onClick={() => props.setHighlightLine(el.line)}
 									/>
 								)}
 							</MapComponent>

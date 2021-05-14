@@ -2,6 +2,7 @@ import {
 	ComponentIcon,
 	InertiaIcon,
 	ComponentEvolvedIcon,
+	CapabilityIcon,
 } from '../components/symbols/icons';
 
 const usages = [
@@ -18,6 +19,16 @@ const usages = [
 		examples: [
 			'component Customer [0.9, 0.5]',
 			'component Cup of Tea [0.9, 0.5]',
+		],
+	},
+	{
+		toolbarButtonText: 'Create Capability',
+		Icon: CapabilityIcon,
+		title: 'To create a capability',
+		summary: 'capability Name [Visibility (Y Axis), Maturity (X Axis)]',
+		examples: [
+			'capability Customer [0.9, 0.5]',
+			'capability Cup of Tea [0.9, 0.5]',
 		],
 	},
 	{

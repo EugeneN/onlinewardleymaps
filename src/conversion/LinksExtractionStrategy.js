@@ -8,6 +8,7 @@ export default class LinksExtractionStrategy {
 			'anchor',
 			'evolve',
 			'component',
+			'capability',
 			'style',
 			'build',
 			'buy',
@@ -99,6 +100,7 @@ export default class LinksExtractionStrategy {
 					}
 				}
 			} catch (err) {
+				console.log(err);
 				throw new ParseError(i);
 			}
 		}

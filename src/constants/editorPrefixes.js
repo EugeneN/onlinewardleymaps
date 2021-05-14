@@ -15,6 +15,7 @@ const iterations = [
 	...attitudes,
 	['note', '<note text>', '[<visibility>, <maturity>]'],
 	['component', '<name>', '[<visibility>, <maturity>]'],
+	['capability', '<name>', '[<visibility>, <maturity>]'],
 	['submap', '<name>', '[<visibility>, <maturity>]', 'url(<url>)'],
 	['url', '<name>', '[<address>]'],
 ]
