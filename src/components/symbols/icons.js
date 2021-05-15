@@ -2,6 +2,7 @@ import React, { memo } from 'react';
 
 import ComponentSymbol from '../symbols/ComponentSymbol';
 import CapabilitySymbol from '../symbols/CapabilitySymbol';
+import ResourceSymbol from '../symbols/ResourceSymbol';
 import ComponentTextSymbol from '../symbols/ComponentTextSymbol';
 import InertiaSymbol from '../symbols/InertiaSymbol';
 
@@ -93,6 +94,28 @@ export const CapabilityIcon = props => (
 			evolved={props.evolved}
 		/>
 		<CapabilitySymbol
+			rx="8px"
+			ry="25px"
+			evolved={props.evolved}
+			styles={props.mapStyleDefs.component}
+		/>
+	</IconWrapper>
+);
+
+export const ResourceIcon = props => (
+	<IconWrapper
+		width={iconWidth}
+		height={iconHeight}
+		mapStyleDefs={props.mapStyleDefs}
+	>
+		<ComponentTextSymbol
+			styles={props.mapStyleDefs.component}
+			text={props.text || 'Resource'}
+			x="8"
+			y="15"
+			evolved={props.evolved}
+		/>
+		<ResourceSymbol
 			rx="8px"
 			ry="25px"
 			evolved={props.evolved}

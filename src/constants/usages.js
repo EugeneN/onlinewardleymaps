@@ -3,6 +3,7 @@ import {
 	InertiaIcon,
 	ComponentEvolvedIcon,
 	CapabilityIcon,
+	ResourceIcon,
 } from '../components/symbols/icons';
 
 const usages = [
@@ -29,6 +30,16 @@ const usages = [
 		examples: [
 			'capability Customer [0.9, 0.5]',
 			'capability Cup of Tea [0.9, 0.5]',
+		],
+	},
+	{
+		toolbarButtonText: 'Create Resource',
+		Icon: ResourceIcon,
+		title: 'To create a resource',
+		summary: 'resource Name [Visibility (Y Axis), Maturity (X Axis)]',
+		examples: [
+			'resource Customer [0.9, 0.5]',
+			'resource Cup of Tea [0.9, 0.5]',
 		],
 	},
 	{

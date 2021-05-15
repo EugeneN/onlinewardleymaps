@@ -9,6 +9,7 @@ export default class LinksExtractionStrategy {
 			'evolve',
 			'component',
 			'capability',
+			'resource',
 			'style',
 			'build',
 			'buy',

@@ -15,6 +15,7 @@ import SubMapExtractionStrategy from './SubMapExtractionStrategy';
 import UrlExtractionStrategy from './UrlExtractionStrategy';
 import AttitudeExtractionStrategy from './AttitudeExtractionStrategy';
 import CapabilityExtractionStrategy from './CapabilityExtractionStrategy';
+import ResourceExtractionStrategy from './ResourceExtractionStrategy';
 
 export default class Converter {
 	parse(data) {
@@ -37,6 +38,7 @@ export default class Converter {
 			new UrlExtractionStrategy(t),
 			new AttitudeExtractionStrategy(t),
 			new CapabilityExtractionStrategy(t),
+			new ResourceExtractionStrategy(t),
 		];
 
 		let converted = {
@@ -46,6 +48,7 @@ export default class Converter {
 			pipelines: [],
 			elements: [],
 			capabilities: [],
+			resources: [],
 			annotations: [],
 			notes: [],
 			presentation: {},

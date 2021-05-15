@@ -29,6 +29,7 @@ function App() {
 	const [mapTitle, setMapTitle] = useState('Untitled Map');
 	const [mapComponents, setMapComponents] = useState([]);
 	const [mapCapabilities, setMapCapabilities] = useState([]);
+	const [mapResources, setMapResources] = useState([]);
 	const [mapSubMaps, setMapSubMaps] = useState([]);
 	const [mapMarkets, setMarkets] = useState([]);
 	const [mapEcosystems, setEcosystems] = useState([]);
@@ -184,6 +185,7 @@ function App() {
 			setMapNotes(r.notes);
 			setMapComponents(r.elements);
 			setMapCapabilities(r.capabilities);
+			setMapResources(r.resources);
 			setMapSubMaps(r.submaps);
 			setMarkets(r.markets);
 			setEcosystems(r.ecosystems);
@@ -312,6 +314,7 @@ function App() {
 						mapMarkets={mapMarkets}
 						mapSubMaps={mapSubMaps}
 						mapCapabilities={mapCapabilities}
+						mapResources={mapResources}
 					/>
 					<div className="form-group">
 						<Meta metaText={metaText} />
@@ -323,6 +326,7 @@ function App() {
 						mapTitle={mapTitle}
 						mapComponents={mapComponents}
 						mapCapabilities={mapCapabilities}
+						mapResources={mapResources}
 						mapMarkets={mapMarkets}
 						mapEcosystems={mapEcosystems}
 						mapSubMaps={mapSubMaps}

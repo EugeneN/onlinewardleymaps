@@ -22,7 +22,7 @@ function MapComponent(props) {
 	);
 
 	console.log('MapComponennt', props);
-	if (props.keyword == 'capability') {
+	if (props.keyword == 'capability' || props.keyword == 'resource') {
 		x = x - props.mapStyleDefs.capability.width / 2;
 		y = y - props.mapStyleDefs.capability.height / 2;
 	}
