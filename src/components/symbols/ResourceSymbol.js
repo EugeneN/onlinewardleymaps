@@ -5,14 +5,18 @@ const ResourceSymbol = props => {
 	const { id, x, y, evolved, onClick, styles = {} } = props;
 	const fill = evolved ? styles.evolvedFill : styles.fill;
 	const stroke = evolved ? styles.evolved : styles.stroke;
+	const points = `0,${styles.height} ${styles.width / 2},0 ${styles.width},${
+		styles.height
+	}`;
 
 	console.log('ResourceSymbol', props, x, y, styles);
 
 	return (
-		<rect
+		<polygon
 			id={id}
 			x={x}
 			y={y}
+			points={points}
 			strokeWidth={styles.strokeWidth}
 			width={styles.width}
 			height={styles.height}

@@ -86,7 +86,7 @@ export const Plain = {
 	},
 	resource: {
 		fontSize: '13px',
-		fill: 'grey',
+		fill: 'white',
 		stroke: 'black',
 		evolved: 'red',
 		evolvedFill: 'white',
